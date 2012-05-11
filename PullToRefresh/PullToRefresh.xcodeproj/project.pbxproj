@@ -13,18 +13,16 @@
 		ABB20EC5155CF6F20076B496 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABB20EC3155CF6F20076B496 /* InfoPlist.strings */; };
 		ABB20EC7155CF6F20076B496 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20EC6155CF6F20076B496 /* main.m */; };
 		ABB20ECB155CF6F20076B496 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20ECA155CF6F20076B496 /* AppDelegate.m */; };
+		ABB20ECE155CF6F20076B496 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20ECD155CF6F20076B496 /* FirstViewController.m */; };
 		ABB20ED0155CF6F20076B496 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB20ECF155CF6F20076B496 /* first.png */; };
 		ABB20ED2155CF6F20076B496 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB20ED1155CF6F20076B496 /* first@2x.png */; };
+		ABB20ED5155CF6F20076B496 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20ED4155CF6F20076B496 /* SecondViewController.m */; };
 		ABB20ED7155CF6F20076B496 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB20ED6155CF6F20076B496 /* second.png */; };
 		ABB20ED9155CF6F20076B496 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB20ED8155CF6F20076B496 /* second@2x.png */; };
-		ABB20EF5155CF7720076B496 /* PullToRefreshDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20EF0155CF7720076B496 /* PullToRefreshDemoViewController.m */; };
-		ABB20EF6155CF7720076B496 /* PullToRefreshDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB20EF1155CF7720076B496 /* PullToRefreshDemoViewController.xib */; };
-		ABB20EF8155CF7720076B496 /* NewPullToRefreshTableDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB20EF4155CF7720076B496 /* NewPullToRefreshTableDemoViewController.xib */; };
-		ABB20F00155CF7A70076B496 /* PullToRefreshScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20EFB155CF7A60076B496 /* PullToRefreshScrollerView.m */; };
-		ABB20F01155CF7A70076B496 /* PullToRefreshTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20EFD155CF7A60076B496 /* PullToRefreshTableView.m */; };
-		ABB20F03155CF7AB0076B496 /* pullToRefreshArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB20F02155CF7AA0076B496 /* pullToRefreshArrow.png */; };
-		ABB20F09155CF8970076B496 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB20F08155CF8970076B496 /* QuartzCore.framework */; };
-		ABB20F10155CFA230076B496 /* NewPullToRefreshTableDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20F0F155CFA230076B496 /* NewPullToRefreshTableDemoViewController.m */; };
+		ABB20EDC155CF6F20076B496 /* FirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB20EDA155CF6F20076B496 /* FirstViewController_iPhone.xib */; };
+		ABB20EDF155CF6F20076B496 /* FirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB20EDD155CF6F20076B496 /* FirstViewController_iPad.xib */; };
+		ABB20EE2155CF6F20076B496 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB20EE0155CF6F20076B496 /* SecondViewController_iPhone.xib */; };
+		ABB20EE5155CF6F20076B496 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABB20EE3155CF6F20076B496 /* SecondViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,30 +30,24 @@
 		ABB20EBA155CF6F20076B496 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ABB20EBC155CF6F20076B496 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ABB20EBE155CF6F20076B496 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		ABB20EC2155CF6F20076B496 /* PullToRefresh-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PullToRefresh-Info.plist"; sourceTree = "<group>"; };
+		ABB20EC2155CF6F20076B496 /* PullToRefresh-Info.plist */ = {isa = PBXFileReference; path = "PullToRefresh-Info.plist"; sourceTree = "<group>"; };
 		ABB20EC4155CF6F20076B496 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ABB20EC6155CF6F20076B496 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ABB20EC8155CF6F20076B496 /* PullToRefresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PullToRefresh-Prefix.pch"; sourceTree = "<group>"; };
-		ABB20EC9155CF6F20076B496 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ABB20EC8155CF6F20076B496 /* PullToRefresh-Prefix.pch */ = {isa = PBXFileReference; path = "PullToRefresh-Prefix.pch"; sourceTree = "<group>"; };
+		ABB20EC9155CF6F20076B496 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
 		ABB20ECA155CF6F20076B496 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ABB20ECC155CF6F20076B496 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		ABB20ECD155CF6F20076B496 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		ABB20ECF155CF6F20076B496 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		ABB20ED1155CF6F20076B496 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		ABB20ED3155CF6F20076B496 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		ABB20ED4155CF6F20076B496 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		ABB20ED6155CF6F20076B496 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		ABB20ED8155CF6F20076B496 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		ABB20EEF155CF7720076B496 /* PullToRefreshDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshDemoViewController.h; sourceTree = "<group>"; };
-		ABB20EF0155CF7720076B496 /* PullToRefreshDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshDemoViewController.m; sourceTree = "<group>"; };
-		ABB20EF1155CF7720076B496 /* PullToRefreshDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullToRefreshDemoViewController.xib; sourceTree = "<group>"; };
-		ABB20EF2155CF7720076B496 /* NewPullToRefreshTableDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPullToRefreshTableDemoViewController.h; sourceTree = "<group>"; };
-		ABB20EF4155CF7720076B496 /* NewPullToRefreshTableDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPullToRefreshTableDemoViewController.xib; sourceTree = "<group>"; };
-		ABB20EFA155CF7A60076B496 /* PullToRefreshScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshScrollerView.h; sourceTree = "<group>"; };
-		ABB20EFB155CF7A60076B496 /* PullToRefreshScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshScrollerView.m; sourceTree = "<group>"; };
-		ABB20EFC155CF7A60076B496 /* PullToRefreshTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshTableView.h; sourceTree = "<group>"; };
-		ABB20EFD155CF7A60076B496 /* PullToRefreshTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshTableView.m; sourceTree = "<group>"; };
-		ABB20EFE155CF7A60076B496 /* PullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefresh.h; sourceTree = "<group>"; };
-		ABB20EFF155CF7A70076B496 /* PullToRefresh-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PullToRefresh-Private.h"; sourceTree = "<group>"; };
-		ABB20F02155CF7AA0076B496 /* pullToRefreshArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pullToRefreshArrow.png; sourceTree = "<group>"; };
-		ABB20F08155CF8970076B496 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		ABB20F0F155CFA230076B496 /* NewPullToRefreshTableDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPullToRefreshTableDemoViewController.m; sourceTree = "<group>"; };
+		ABB20EDB155CF6F20076B496 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPhone.xib; sourceTree = "<group>"; };
+		ABB20EDE155CF6F20076B496 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPad.xib; sourceTree = "<group>"; };
+		ABB20EE1155CF6F20076B496 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		ABB20EE4155CF6F20076B496 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABB20F09155CF8970076B496 /* QuartzCore.framework in Frameworks */,
 				ABB20EBB155CF6F20076B496 /* UIKit.framework in Frameworks */,
 				ABB20EBD155CF6F20076B496 /* Foundation.framework in Frameworks */,
 				ABB20EBF155CF6F20076B496 /* CoreGraphics.framework in Frameworks */,
@@ -93,7 +84,6 @@
 		ABB20EB9155CF6F20076B496 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ABB20F08155CF8970076B496 /* QuartzCore.framework */,
 				ABB20EBA155CF6F20076B496 /* UIKit.framework */,
 				ABB20EBC155CF6F20076B496 /* Foundation.framework */,
 				ABB20EBE155CF6F20076B496 /* CoreGraphics.framework */,
@@ -104,15 +94,20 @@
 		ABB20EC0155CF6F20076B496 /* PullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				ABB20F04155CF80D0076B496 /* PullToRefreshClass */,
-				ABB20F06155CF8310076B496 /* Graphic */,
-				ABB20F07155CF83B0076B496 /* Demo */,
 				ABB20EC9155CF6F20076B496 /* AppDelegate.h */,
 				ABB20ECA155CF6F20076B496 /* AppDelegate.m */,
+				ABB20ECC155CF6F20076B496 /* FirstViewController.h */,
+				ABB20ECD155CF6F20076B496 /* FirstViewController.m */,
 				ABB20ECF155CF6F20076B496 /* first.png */,
 				ABB20ED1155CF6F20076B496 /* first@2x.png */,
+				ABB20ED3155CF6F20076B496 /* SecondViewController.h */,
+				ABB20ED4155CF6F20076B496 /* SecondViewController.m */,
 				ABB20ED6155CF6F20076B496 /* second.png */,
 				ABB20ED8155CF6F20076B496 /* second@2x.png */,
+				ABB20EDA155CF6F20076B496 /* FirstViewController_iPhone.xib */,
+				ABB20EDD155CF6F20076B496 /* FirstViewController_iPad.xib */,
+				ABB20EE0155CF6F20076B496 /* SecondViewController_iPhone.xib */,
+				ABB20EE3155CF6F20076B496 /* SecondViewController_iPad.xib */,
 				ABB20EC1155CF6F20076B496 /* Supporting Files */,
 			);
 			path = PullToRefresh;
@@ -127,48 +122,6 @@
 				ABB20EC8155CF6F20076B496 /* PullToRefresh-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		ABB20F04155CF80D0076B496 /* PullToRefreshClass */ = {
-			isa = PBXGroup;
-			children = (
-				ABB20F05155CF8280076B496 /* Protocol */,
-				ABB20EFA155CF7A60076B496 /* PullToRefreshScrollerView.h */,
-				ABB20EFB155CF7A60076B496 /* PullToRefreshScrollerView.m */,
-				ABB20EFC155CF7A60076B496 /* PullToRefreshTableView.h */,
-				ABB20EFD155CF7A60076B496 /* PullToRefreshTableView.m */,
-			);
-			name = PullToRefreshClass;
-			sourceTree = "<group>";
-		};
-		ABB20F05155CF8280076B496 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				ABB20EFE155CF7A60076B496 /* PullToRefresh.h */,
-				ABB20EFF155CF7A70076B496 /* PullToRefresh-Private.h */,
-			);
-			name = Protocol;
-			sourceTree = "<group>";
-		};
-		ABB20F06155CF8310076B496 /* Graphic */ = {
-			isa = PBXGroup;
-			children = (
-				ABB20F02155CF7AA0076B496 /* pullToRefreshArrow.png */,
-			);
-			name = Graphic;
-			sourceTree = "<group>";
-		};
-		ABB20F07155CF83B0076B496 /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				ABB20EEF155CF7720076B496 /* PullToRefreshDemoViewController.h */,
-				ABB20EF0155CF7720076B496 /* PullToRefreshDemoViewController.m */,
-				ABB20EF1155CF7720076B496 /* PullToRefreshDemoViewController.xib */,
-				ABB20EF2155CF7720076B496 /* NewPullToRefreshTableDemoViewController.h */,
-				ABB20F0F155CFA230076B496 /* NewPullToRefreshTableDemoViewController.m */,
-				ABB20EF4155CF7720076B496 /* NewPullToRefreshTableDemoViewController.xib */,
-			);
-			name = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +179,10 @@
 				ABB20ED2155CF6F20076B496 /* first@2x.png in Resources */,
 				ABB20ED7155CF6F20076B496 /* second.png in Resources */,
 				ABB20ED9155CF6F20076B496 /* second@2x.png in Resources */,
-				ABB20EF6155CF7720076B496 /* PullToRefreshDemoViewController.xib in Resources */,
-				ABB20EF8155CF7720076B496 /* NewPullToRefreshTableDemoViewController.xib in Resources */,
-				ABB20F03155CF7AB0076B496 /* pullToRefreshArrow.png in Resources */,
+				ABB20EDC155CF6F20076B496 /* FirstViewController_iPhone.xib in Resources */,
+				ABB20EDF155CF6F20076B496 /* FirstViewController_iPad.xib in Resources */,
+				ABB20EE2155CF6F20076B496 /* SecondViewController_iPhone.xib in Resources */,
+				ABB20EE5155CF6F20076B496 /* SecondViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,10 +195,8 @@
 			files = (
 				ABB20EC7155CF6F20076B496 /* main.m in Sources */,
 				ABB20ECB155CF6F20076B496 /* AppDelegate.m in Sources */,
-				ABB20EF5155CF7720076B496 /* PullToRefreshDemoViewController.m in Sources */,
-				ABB20F00155CF7A70076B496 /* PullToRefreshScrollerView.m in Sources */,
-				ABB20F01155CF7A70076B496 /* PullToRefreshTableView.m in Sources */,
-				ABB20F10155CFA230076B496 /* NewPullToRefreshTableDemoViewController.m in Sources */,
+				ABB20ECE155CF6F20076B496 /* FirstViewController.m in Sources */,
+				ABB20ED5155CF6F20076B496 /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +209,38 @@
 				ABB20EC4155CF6F20076B496 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ABB20EDA155CF6F20076B496 /* FirstViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB20EDB155CF6F20076B496 /* en */,
+			);
+			name = FirstViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		ABB20EDD155CF6F20076B496 /* FirstViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB20EDE155CF6F20076B496 /* en */,
+			);
+			name = FirstViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		ABB20EE0155CF6F20076B496 /* SecondViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB20EE1155CF6F20076B496 /* en */,
+			);
+			name = SecondViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		ABB20EE3155CF6F20076B496 /* SecondViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB20EE4155CF6F20076B496 /* en */,
+			);
+			name = SecondViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -348,7 +332,6 @@
 				ABB20EEA155CF6F20076B496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
