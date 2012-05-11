@@ -34,7 +34,7 @@
     
     items = [[NSMutableArray alloc] initWithObjects:@"What time is it?", nil];
     
-    
+    [theTable setupStrings];
     [theTable addPullToRefreshHeader];
     
 }

@@ -11,12 +11,10 @@
 #import "PullToRefreshTableView.h"
 
 @interface PullToRefreshScrollerView (PrivateObjects) <PullToRefresh>
-- (void)setupStrings;
+
 - (void)startLoading;
 @end
 
 @interface PullToRefreshTableView (PrivateObjects) <PullToRefresh>
-- (void)setupStrings;
-- (void)addPullToRefreshHeader;
 - (void)startLoading;
 @end

@@ -47,6 +47,7 @@
     // Do any additional setup after loading the view from its nib.
     [pScrollView setContentSize:CGSizeMake(1, 1000)]
     ;
+    [pScrollView setupStrings];
     [pScrollView addPullToRefreshHeader];
     
 }

@@ -27,5 +27,7 @@
 - (void) stopLoading;
 
 - (void)addPullToRefreshHeader;
+
+- (void)setupStrings;
 @end
 
