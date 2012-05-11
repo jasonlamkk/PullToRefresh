@@ -25,6 +25,7 @@
 		ABB20F03155CF7AB0076B496 /* pullToRefreshArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB20F02155CF7AA0076B496 /* pullToRefreshArrow.png */; };
 		ABB20F09155CF8970076B496 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB20F08155CF8970076B496 /* QuartzCore.framework */; };
 		ABB20F10155CFA230076B496 /* NewPullToRefreshTableDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB20F0F155CFA230076B496 /* NewPullToRefreshTableDemoViewController.m */; };
+		ABB20F18155CFEED0076B496 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABB20F1A155CFEED0076B496 /* Localized.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		ABB20F02155CF7AA0076B496 /* pullToRefreshArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pullToRefreshArrow.png; sourceTree = "<group>"; };
 		ABB20F08155CF8970076B496 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ABB20F0F155CFA230076B496 /* NewPullToRefreshTableDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPullToRefreshTableDemoViewController.m; sourceTree = "<group>"; };
+		ABB20F19155CFEED0076B496 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
+		ABB20F1B155CFEF40076B496 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localized.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,7 @@
 			children = (
 				ABB20EC2155CF6F20076B496 /* PullToRefresh-Info.plist */,
 				ABB20EC3155CF6F20076B496 /* InfoPlist.strings */,
+				ABB20F1A155CFEED0076B496 /* Localized.strings */,
 				ABB20EC6155CF6F20076B496 /* main.m */,
 				ABB20EC8155CF6F20076B496 /* PullToRefresh-Prefix.pch */,
 			);
@@ -205,6 +209,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hant",
 			);
 			mainGroup = ABB20EAB155CF6F20076B496;
 			productRefGroup = ABB20EB7155CF6F20076B496 /* Products */;
@@ -229,6 +234,7 @@
 				ABB20EF6155CF7720076B496 /* PullToRefreshDemoViewController.xib in Resources */,
 				ABB20EF8155CF7720076B496 /* NewPullToRefreshTableDemoViewController.xib in Resources */,
 				ABB20F03155CF7AB0076B496 /* pullToRefreshArrow.png in Resources */,
+				ABB20F18155CFEED0076B496 /* Localized.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +263,15 @@
 				ABB20EC4155CF6F20076B496 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ABB20F1A155CFEED0076B496 /* Localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB20F19155CFEED0076B496 /* en */,
+				ABB20F1B155CFEF40076B496 /* zh-Hant */,
+			);
+			name = Localized.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
