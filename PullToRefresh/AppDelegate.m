@@ -12,6 +12,10 @@
 
 #import "NewPullToRefreshTableDemoViewController.h"
 
+#import "PushToLoadScrollerDemoViewController.h"
+
+#import "PushToLoadTableDemoViewController.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -36,8 +40,11 @@
         viewController1 = [[[PullToRefreshDemoViewController alloc] initWithNibName:@"PullToRefreshDemoViewController" bundle:nil] autorelease];
         viewController2 = [[[NewPullToRefreshTableDemoViewController alloc] initWithNibName:@"NewPullToRefreshTableDemoViewController" bundle:nil] autorelease];
     }
+    UIViewController * viewController3 = [[[PushToLoadScrollerDemoViewController alloc] initWithNibName:@"PushToLoadScrollerDemoViewController" bundle:nil] autorelease];
+    UIViewController * viewController4 = [[[PushToLoadTableDemoViewController alloc] initWithNibName:@"PushToLoadTableDemoViewController" bundle:nil] autorelease];
+    
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, viewController3, viewController4, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -1,28 +1,32 @@
 //
-//  PushToLoadScrollerView.h
-//  PullToRefresh
+//  PullToRefreshScrollerView.h
+//  NewsImageTables
 //
-//  Created by Jason Lam on 12年5月21日.
+//  Created by Jason Lam on 12年5月11日.
 //  Copyright (c) 2012年 WaveSpread Technology Limited. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "PushToLoad.h"
+#import "PullToRefresh.h"
 
-@interface PushToLoadScrollerView : UIScrollView<PushToLoad,UIScrollViewDelegate>
+@interface PullToRefreshScrollerView : UIScrollView<PullToRefresh,UIScrollViewDelegate>
 {
-    NSString *textPush;
+    
+    NSString *textPull;
     NSString *textRelease;
     NSString *textLoading;
-    UIView *loadingFooterView;
+    UIView *refreshHeaderView;
     UILabel *refreshLabel;
     UIImageView *refreshArrow;
     UIActivityIndicatorView *refreshSpinner;
     
+    
     BOOL isDragging;
     BOOL isLoading;
     
+
     id<UIScrollViewDelegate> __externalDelegate;
-    
+    //id<UIScrollViewDelegate> _delegate;
 }
+
 @end

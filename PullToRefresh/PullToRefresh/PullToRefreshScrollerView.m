@@ -1,18 +1,19 @@
 //
-//  PushToLoadScrollerView.m
-//  PullToRefresh
+//  PullToRefreshScrollerView.m
+//  NewsImageTables
 //
-//  Created by Jason Lam on 12年5月21日.
+//  Created by Jason Lam on 12年5月11日.
 //  Copyright (c) 2012年 WaveSpread Technology Limited. All rights reserved.
 //
 
-#import "PushToLoadScrollerView.h"
+#import "PullToRefreshScrollerView.h"
+#import "PullToRefresh-Private.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation PushToLoadScrollerView
+@implementation PullToRefreshScrollerView
 
-@synthesize LoadingFooterHeight;
-@synthesize footerDataLoader;
+@synthesize RefreshHeaderHeight;
+@synthesize dataLoader;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,58 +25,50 @@
 }
 
 - (void)setupStrings{
-    textPush = [[NSString alloc] initWithString:NSLocalizedString(@"PushUpToRefresh", @"Push up to refresh...")];
+    textPull = [[NSString alloc] initWithString:NSLocalizedString(@"PullDownToRefresh", @"Pull down to refresh...")];
     textRelease = [[NSString alloc] initWithString:NSLocalizedString(@"ReleaseToRefresh", @"Release to refresh...")];
     textLoading = [[NSString alloc] initWithString:NSLocalizedString(@"RefreshLoading", @"Loading...")];
 }
 
-//override
--(void) setContentSize:(CGSize)contentSize{
-    [super setContentSize:contentSize];
-    loadingFooterView.frame = CGRectMake(0, contentSize.height, self.frame.size.width, LoadingFooterHeight);
-    //refreshLabel.frame = CGRectMake(0, contentSize.height, self.frame.size.width, LoadingFooterHeight);
-}
-- (void) addPushToLoadFooter{
-    if (0==LoadingFooterHeight) {
-        LoadingFooterHeight = DEFAULT_LOADING_FOOTER_HEIGHT;
+- (void)addPullToRefreshHeader {
+    if (0==RefreshHeaderHeight) {
+        RefreshHeaderHeight = DEFAULT_REFRESH_HEADER_HEIGHT;
     }
-    loadingFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, self.frame.size.height, self.frame.size.width, LoadingFooterHeight)];
+    refreshHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0 - RefreshHeaderHeight, self.frame.size.width, RefreshHeaderHeight)];
+    refreshHeaderView.backgroundColor = [UIColor clearColor];
     
-    loadingFooterView.backgroundColor = [UIColor clearColor];
-    
-    refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, loadingFooterView.frame.size.width, loadingFooterView.frame.size.height)];
+    refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, RefreshHeaderHeight)];
     refreshLabel.backgroundColor = [UIColor clearColor];
     refreshLabel.font = [UIFont boldSystemFontOfSize:12.0];
     refreshLabel.textAlignment = UITextAlignmentCenter;
     
     refreshArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pullToRefreshArrow.png"]];
-    refreshArrow.transform = CGAffineTransformMakeScale(1, -1);
-    refreshArrow.frame = CGRectMake(floorf((LoadingFooterHeight - 27.f) / 2.f),
-                                    (floorf(LoadingFooterHeight - 44.f) / 2.f),
+    refreshArrow.frame = CGRectMake(floorf((RefreshHeaderHeight - 27.f) / 2.f),
+                                    (floorf(RefreshHeaderHeight - 44.f) / 2.f),
                                     27, 44);
     
     refreshSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     refreshSpinner.color = [UIColor orangeColor];
-    refreshSpinner.frame = CGRectMake(floorf(floorf(LoadingFooterHeight - refreshSpinner.frame.size.width) / 2.f), floorf((LoadingFooterHeight - refreshSpinner.frame.size.height) / 2.f), refreshSpinner.frame.size.width, refreshSpinner.frame.size.height);
+    refreshSpinner.frame = CGRectMake(floorf(floorf(RefreshHeaderHeight - refreshSpinner.frame.size.width) / 2.f), floorf((RefreshHeaderHeight - refreshSpinner.frame.size.height) / 2.f), refreshSpinner.frame.size.width, refreshSpinner.frame.size.height);
     refreshSpinner.hidesWhenStopped = YES;
     
-    [loadingFooterView addSubview:refreshLabel];
-    [loadingFooterView addSubview:refreshArrow];
-    [loadingFooterView addSubview:refreshSpinner];
-    [self addSubview:loadingFooterView];
+    [refreshHeaderView addSubview:refreshLabel];
+    [refreshHeaderView addSubview:refreshArrow];
+    [refreshHeaderView addSubview:refreshSpinner];
+    [self addSubview:refreshHeaderView];
 }
-/*
+
 -(void) setFrame:(CGRect)frame{
     [super setFrame:frame];
     refreshHeaderView.frame = CGRectMake(0, 0 - RefreshHeaderHeight, 320, RefreshHeaderHeight);
-}*/
+}
 
 #pragma mark - delegate handling
 -(void) setDelegate:(id<UIScrollViewDelegate>)delegate{
     __externalDelegate = delegate;
     super.delegate = self;
 }
-
+                                            
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_2){
     // any zoom scale changes
     if(__externalDelegate && [__externalDelegate respondsToSelector:@selector(scrollViewDidZoom:)]){
@@ -139,7 +132,7 @@
 
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    // called on finger up as we are moving
+// called on finger up as we are moving
     if (isLoading) return;
     isDragging = YES;
     
@@ -147,32 +140,28 @@
     if(__externalDelegate && [__externalDelegate respondsToSelector:@selector(scrollViewDidZoom:)]){
         [__externalDelegate scrollViewDidZoom:scrollView];
     }
-    
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // any offset changes
+    
     if (isLoading) {
         // Update the content inset, good for section headers
-        if (scrollView.contentOffset.y+scrollView.frame.size.height < scrollView.contentSize.height)
+        if (scrollView.contentOffset.y > 0)
             self.contentInset = UIEdgeInsetsZero;
-        else if (scrollView.contentOffset.y+scrollView.frame.size.height > LoadingFooterHeight+self.contentSize.height)
-            self.contentInset = UIEdgeInsetsMake(0, 0, LoadingFooterHeight, 0);
-    } else if (isDragging && scrollView.contentOffset.y+scrollView.frame.size.height > self.contentSize.height) {
-        
-        NSLog(@"scrollViewDidScroll:\r\n\
-              %f>%f",scrollView.contentOffset.y,LoadingFooterHeight+self.contentSize.height);
-    
-        
+        else if (scrollView.contentOffset.y >= -RefreshHeaderHeight)
+            self.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    } else if (isDragging && scrollView.contentOffset.y < 0) {
         // Update the arrow direction and label
         [UIView beginAnimations:nil context:NULL];
-        if (scrollView.contentOffset.y+scrollView.frame.size.height > LoadingFooterHeight+self.contentSize.height) {
+        if (scrollView.contentOffset.y < -RefreshHeaderHeight) {
             // User is scrolling above the header
             refreshLabel.text = textRelease;
-            [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
-        } else { // User is scrolling somewhere within the header
-            refreshLabel.text = textPush;
             [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI, 0, 0, 1);
+        } else { // User is scrolling somewhere within the header
+            refreshLabel.text = textPull;
+            [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
         }
         [UIView commitAnimations];
     }
@@ -184,9 +173,9 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (isLoading) return;
     isDragging = NO;
-    if (scrollView.contentOffset.y+scrollView.frame.size.height >= LoadingFooterHeight+self.contentSize.height) {
+    if (scrollView.contentOffset.y <= -RefreshHeaderHeight) {
         // Released above the header
-        [self startPushLoading];
+        [self startLoading];
     }
     
     if(__externalDelegate && [__externalDelegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)]){
@@ -197,20 +186,20 @@
 }
 
 
-- (void) startPushLoading{
+- (void)startLoading {
     isLoading = YES;
     
     [UIView animateWithDuration:0.3 animations:^{
-        self.contentInset = UIEdgeInsetsMake(0, 0, LoadingFooterHeight, 0);
+        self.contentInset = UIEdgeInsetsMake(RefreshHeaderHeight, 0, 0, 0);
         refreshLabel.text = textLoading;
         refreshArrow.hidden = YES;
         [refreshSpinner startAnimating];
     }];
     // Refresh action!
-    [self reload];
+    [self refresh];
 }
 
-- (void) stopPushLoading {
+- (void)stopLoading {
     isLoading = NO;
     
     
@@ -219,30 +208,30 @@
         UIEdgeInsets tableContentInset = self.contentInset;
         tableContentInset.top = 0.0;
         self.contentInset = tableContentInset;
-        [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI, 0, 0, 1);//CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
+        [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
     } completion:^(BOOL finished) {
-        refreshLabel.text = textPush;
+        refreshLabel.text = textPull;
         refreshArrow.hidden = NO;
         [refreshSpinner stopAnimating];
     }];
     
 }
 
-- (void)reload {
+- (void)refresh {
     // This is just a demo. Override this method with your custom reload action.
     // Don't forget to call stopLoading at the end.
     //[self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
-    if (self.footerDataLoader && [self.footerDataLoader respondsToSelector:@selector(loadLatestDataFor:)]) {
-        [self.footerDataLoader loadLatestDataFor:self];
+    if (self.dataLoader && [self.dataLoader respondsToSelector:@selector(loadLatestDataFor:)]) {
+        [self.dataLoader loadLatestDataFor:self];
     }
 }
 
 - (void)dealloc {
-    [loadingFooterView release];
+    [refreshHeaderView release];
     [refreshLabel release];
     [refreshArrow release];
     [refreshSpinner release];
-    [textPush release];
+    [textPull release];
     [textRelease release];
     [textLoading release];
     [super dealloc];

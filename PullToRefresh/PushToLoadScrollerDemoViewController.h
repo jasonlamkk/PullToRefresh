@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PushToLoadScrollerView.h"
 
-@interface PushToLoadScrollerDemoViewController : UIViewController
-
+@interface PushToLoadScrollerDemoViewController : UIViewController<PushToLoadViewLoaderDelegate>
+{
+    IBOutlet PushToLoadScrollerView * pScrollView;
+    
+    IBOutlet UILabel * lblLastClock;
+}
 @end

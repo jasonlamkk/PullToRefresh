@@ -8,3 +8,5 @@
 "PullDownToRefresh" = "Pull and Release...";
 "ReleaseToRefresh" = "Release to refresh...";
 "RefreshLoading" = "Loading...";
+
+"PushUpToRefresh" = "Push and Release...";

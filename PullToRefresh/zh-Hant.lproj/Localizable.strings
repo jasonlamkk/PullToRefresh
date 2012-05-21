@@ -5,6 +5,8 @@
   Created by Jason Lam on 12年5月11日.
   Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 */
-"PullDownToRefresh" = "下拉然後放手...";
+"PullDownToRefresh" = "往下拉然後放手...";
 "ReleaseToRefresh" = "放手後會更新...";
 "RefreshLoading" = "數據更新中...";
+
+"PushUpToRefresh" = "往上推然後放手...";

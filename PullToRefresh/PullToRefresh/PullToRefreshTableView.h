@@ -1,20 +1,21 @@
 //
-//  PushToLoadTableView.h
-//  PullToRefresh
+//  PullToRefreshTableView.h
+//  NewsImageTables
 //
-//  Created by Jason Lam on 12年5月21日.
+//  Created by Jason Lam on 12年5月11日.
 //  Copyright (c) 2012年 WaveSpread Technology Limited. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "PushToLoad.h"
+#import "PullToRefresh.h"
 
-@interface PushToLoadTableView : UITableView<PushToLoad,UITableViewDelegate>
+
+@interface PullToRefreshTableView : UITableView<PullToRefresh,UIScrollViewDelegate,UITableViewDelegate>
 {
-    NSString *textPush;
+    NSString *textPull;
     NSString *textRelease;
     NSString *textLoading;
-    UIView *loadingFooterView;
+    UIView *refreshHeaderView;
     UILabel *refreshLabel;
     UIImageView *refreshArrow;
     UIActivityIndicatorView *refreshSpinner;
@@ -24,6 +25,4 @@
     
     id<UITableViewDelegate> __externalDelegate;
 }
-
-
 @end

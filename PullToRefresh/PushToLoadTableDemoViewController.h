@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PushToloadTableView.h"
 
-@interface PushToLoadTableDemoViewController : UIViewController
+@interface PushToLoadTableDemoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,PushToLoadViewLoaderDelegate>
+{
+    IBOutlet PushToLoadTableView * theTable;
+    NSMutableArray *items;
+
+}
 
 @end
